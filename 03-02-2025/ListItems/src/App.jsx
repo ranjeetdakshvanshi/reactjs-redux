@@ -1,17 +1,16 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import FoodItem from "./FoodItem";
+import ErrorMassage from "./ErrorMassage";
 function App() {
-   let itemlist=["Dal", "Salad","roti","milk" ,"ghee"];
-  
-  return (
-    <>
-      <h1>HEALTHY FOOD</h1>
-       ({itemlist.length==0})
-      <ul className="list-group">
-         {itemlist.map((item)=>(<li key={item}  className="list-group-item">{item}</li>))}
-      </ul>
-    </>
-  );
+  let ItemList = ["Dal", "Ghee", "Salad","Milk","Green Vegetable"];
+   return (
+     <>
+       <div class="main-container">
+         <h3>Healthy Food List</h3>
+         <ErrorMassage items={ItemList} />
+         <FoodItem items={ItemList} />
+       </div>
+     </>
+   );
 }
-
 export default App;
